@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,400&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            font-size: arial;
+            box-sizing: border-box;
+            transition: 0.7s;
+            font-family: 'Montserrat';
+        }
+
+        :root {
+            --main_color: rgb(190, 61, 82);
+        }
+
+        body {
+            height: 100vh;
+            align-items: center;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(230, 230, 230);
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            transform: translateY(50%);
+
+        }
+
+        .barre {
+            height: 50px;
+            width: 90%;
+            margin: 30px auto;
+            /* overflow: hidden; */
+            border-radius: 10px;
+            background: rgb(241, 241, 241);
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        }
+
+        .barre>div {
+            height: 50px;
+            width: 100%;
+            border-radius: 10px;
+            color: var(--main_color);
+            background-color: var(--main_color);
+        }
+
+        p {
+            margin: 20px;
+            font-size: 1.35em;
+        }
+
+        p>span {
+            color: var(--main_color);
+            font-size: 1.4em;
+            margin: 3px;
+        }
+
+        .timer {
+            display: flex;
+            text-align: center;
+            width: 95%;
+            margin: 40px auto;
+            justify-content: space-evenly;
+        }
+
+        .timer>div {
+            line-height: 100px;
+            width: 100px;
+            border-radius: 20px;
+            margin: 5px;
+            background: rgb(241, 241, 241);
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+            font-size: 2em;
+            position: relative;
+        }
+
+        .timer>div:nth-child(2), .timer>div:nth-child(4), .timer>div:nth-child(6) {
+            margin-right: 60px;
+        }
+
+        .timer>div:nth-child(2)::after {
+            content: 'j';
+            right: -25px;
+        }
+
+        .timer>div:nth-child(4)::after {
+            content: 'h';
+            right: -35px;
+        }
+
+        .timer>div:nth-child(6)::after {
+            content: 'm';
+            right: -47px;
+        }
+
+        .timer>div:nth-child(8)::after {
+            content: 's';
+            right: -35px;
+            
+        }
+
+        .timer>div:nth-child(2)::after, .timer>div:nth-child(4)::after, .timer>div:nth-child(6)::after, .timer>div:nth-child(8)::after {
+            color: var(--main_color);
+            position: absolute;
+            top: 40px;
+        }
+		
+		@media screen and (max-width: 900px) {
+			.container {
+				width: 95%;
+			}
+		}
+		
+		@media screen and (max-width: 700px) {
+			body {
+				overflow: auto;
+				height: auto;
+			}
+			
+			.barre {
+				height: 35px;
+			}
+			
+			.barre>div {
+				height: 35px;
+			}
+			
+			.container {
+				transform: none;
+			}
+			.timer {
+				flex-direction: column;
+			}
+			
+			.timer>div {
+				margin-left: auto !important;
+				margin-right: auto !important;
+				
+				line-height: 125px;
+				width: 125px;
+			}
+			
+			.timer>div:nth-child(2), .timer>div:nth-child(4), .timer>div:nth-child(6), .timer>div:nth-child(8) {
+				margin-bottom: 40px;
+			}
+			
+			p {
+				font-size: 1.1em;
+			}
+			
+			p>span {
+				font-size: 1.2em;
+				margin: 1.5px;
+			}
+		}
